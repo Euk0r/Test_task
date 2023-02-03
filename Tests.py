@@ -16,7 +16,8 @@ def test_yandex_search(browser):
 def test_yandex_images(browser):
     yandex_main_page = ImageHelper(browser)
     yandex_main_page.go_to_site()
-    yandex_main_page.click_on_the_services_button()
+    while yandex_main_page.click_on_the_services_button():
+        yandex_main_page.refresh_page()
     elements = yandex_main_page.check_services()
     assert "Картинки" in elements
     yandex_main_page.click_on_the_images_service()

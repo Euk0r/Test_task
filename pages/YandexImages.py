@@ -9,7 +9,7 @@ class YandexImagesLocators:
     LOCATOR_YANDEX_IMAGE_CATEGORY = (By.CLASS_NAME, "PopularRequestList-Preview")
     LOCATOR_YANDEX_IMAGE_CATEGORY_NAME = (By.CLASS_NAME, "PopularRequestList-SearchText")
     LOCATOR_YANDEX_SEARCH_FIELD = (By.CLASS_NAME, "input__control")
-    LOCATOR_YANDEX_IMAGE_ITEM = (By.CLASS_NAME, "serp-item")
+    LOCATOR_YANDEX_IMAGE_ITEM = (By.CLASS_NAME, "serp-item__link")
     LOCATOR_YANDEX_IMAGE_VIEWER = (By.CLASS_NAME, "MediaViewer")
     LOCATOR_YANDEX_IMAGE_VIEWER_LINK = (By.CLASS_NAME, "Link_view_default")
     LOCATOR_YANDEX_IMAGE_VIEWER_NEXT = (By.CLASS_NAME, "CircleButton_type_next")
