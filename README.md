@@ -246,7 +246,7 @@ ___
 
 Оба этих параметра применяются автоматически при [запуске тестирования](#запуск-тестирования).
 
-Пример отчета: [report-example.html](report-example.html)
+Пример отчета: [report-example.html](report-example.html). [Превью](https://htmlpreview.github.io/?https://github.com/Euk0r/Test_task/blob/master/report-example.html).
 
 ![report_example](https://user-images.githubusercontent.com/72356960/216786959-40a3e3bb-68e6-4271-aa20-ac366ba95a0d.png)
 ___
