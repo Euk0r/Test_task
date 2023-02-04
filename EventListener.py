@@ -1,7 +1,7 @@
 import logging
 from selenium.webdriver.support.events import AbstractEventListener
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("test_logger")
 logger.setLevel(logging.INFO)
 logger.setLevel(logging.DEBUG)
 

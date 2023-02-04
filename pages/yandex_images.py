@@ -1,4 +1,4 @@
-from BaseApp import BasePage
+from pages.yandex_base import BasePage
 from selenium.webdriver.common.by import By
 
 
