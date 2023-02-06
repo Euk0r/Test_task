@@ -17,18 +17,18 @@ ___
 
 Структура проекта выполнена в соответствии с паттерном программирования **Page Object**.
 
-- Test_task/
-  - pages/ - директория, содержащая реализацию методов для работы со страницей
-    - `__init__.py`
-    - `yandex_base.py`
-    - `yandex_images.py`
-    - `yandex_search.py`
-  - tests/ - директория, содержащая реализацию тестов
-    - `test_yandex.py`
-  - `conftest.py` - файл для фикстур
-  - `EventListener.py` - файл логгера
-  - `pytest.ini` - инициализация pytest
-  - `requirements.txt` - требуемые библиотеки
+Test_task/  
+├── `conftest.py` - файл для фикстур  
+├── `EventListener.py` - файл логгера  
+├── `pytest.ini` - инициализация pytest  
+├── `requirements.txt` - требуемые библиотеки  
+├── pages/ - директория, содержащая реализацию методов для работы со страницей  
+│      ├── `__init__.py`  
+│      ├── `yandex_base.py`  
+│      ├── `yandex_images.py`  
+│      └── `yandex_search.py`  
+└── tests/ - директория, содержащая реализацию тестов  
+        └── `test_yandex.py`  
 
 ___
 
@@ -60,9 +60,7 @@ ___
 2. Проверить наличие поля поиска
 3. Ввести в поиск Тензор
 4. Проверить что появилась таблица с подсказками (suggest)
-![ya_search](https://user-images.githubusercontent.com/72356960/216786981-9f9d2d50-31b3-47f6-843e-66472931420b.png)
-
-
+![ya_search](https://user-images.githubusercontent.com/72356960/216786981-9f9d2d50-31b3-47f6-843e-66472931420b.png)  
 5. При нажатии Enter появляется таблица результатов поиска
 6. Проверить, что 1 ссылка ведет на сайт tensor.ru
 
@@ -91,33 +89,21 @@ def test_yandex_search(browser):
 
 1. Зайти на ya.ru
 2. Нажать на кнопку всех сервисов
-![ya_all_services](https://user-images.githubusercontent.com/72356960/216786963-6fa8a1ca-ba88-4f57-ac70-edf67af12452.png)
-
-
+![ya_all_services](https://user-images.githubusercontent.com/72356960/216786963-6fa8a1ca-ba88-4f57-ac70-edf67af12452.png)  
 3. Проверить, что ссылка «Картинки» присутствует на странице
-![ya_all_services_images](https://user-images.githubusercontent.com/72356960/216786970-003dcb84-6382-4cf3-90a5-eb5f61ee589d.png)
-
-
+![ya_all_services_images](https://user-images.githubusercontent.com/72356960/216786970-003dcb84-6382-4cf3-90a5-eb5f61ee589d.png)  
 4. Кликаем на ссылку
 5. Проверить, что перешли на url https://yandex.ru/images/
 6. Открыть первую категорию
-![ya_images_first_category](https://user-images.githubusercontent.com/72356960/216786977-f7d62957-5465-4cc0-a120-1c38009caee6.png)
-
-
+![ya_images_first_category](https://user-images.githubusercontent.com/72356960/216786977-f7d62957-5465-4cc0-a120-1c38009caee6.png)  
 7. Проверить, что название категории отображается в поле поиска 
 (также проверить совпадение их названий)
-![ya_images_category_in_search](https://user-images.githubusercontent.com/72356960/216786976-e0fc3cba-e21b-49fb-ab9b-04d83bd84f0e.png)
-
-
+![ya_images_category_in_search](https://user-images.githubusercontent.com/72356960/216786976-e0fc3cba-e21b-49fb-ab9b-04d83bd84f0e.png)  
 8. Открыть 1 картинку
-![ya_images_first_image](https://user-images.githubusercontent.com/72356960/216786979-40c11ece-52d6-4b9b-a854-ce6dfb9b2d5e.png)
-
-
+![ya_images_first_image](https://user-images.githubusercontent.com/72356960/216786979-40c11ece-52d6-4b9b-a854-ce6dfb9b2d5e.png)  
 9. Проверить, что картинка открылась
 10. Нажать кнопку вперед
-![ya_images_forward](https://user-images.githubusercontent.com/72356960/216786980-526d35f0-2a58-46ad-91f2-ebbaa9754daf.png)
-
-
+![ya_images_forward](https://user-images.githubusercontent.com/72356960/216786980-526d35f0-2a58-46ad-91f2-ebbaa9754daf.png)  
 11. Проверить, что картинка сменилась
 12. Нажать назад
 13. Проверить, что картинка осталась из шага 9 
@@ -254,17 +240,12 @@ ___
 ## Проблемы
 
 1. При выполнении [первого теста](#поиск-в-яндексе), после ввода и нажатия кнопки поиска может появиться капча,
-которая не позволяет успешно завершить тест, вызывая TimeoutException.
-
-
+которая не позволяет успешно завершить тест, вызывая TimeoutException.  
 2. При выполнении [второго теста](#картинки-на-яндексе), в самом начале при открытии страницы может не появиться кнопка
-всех сервисов. Было принято решение в случае отсутствия этого меню перезагружать страницу.
-
-
+всех сервисов. Было принято решение в случае отсутствия этого меню перезагружать страницу.  
 3. Изначально сравнение картинок проверялось по их ссылкам (src).
 При таком сравнении, часто возникали моменты, когда одна и та же картинка подгружалась различных размеров.
-Из-за чего их ссылки отличались.
-
-    Поэтому было сделано решение проверять картинки по их заголовкам.
+Из-за чего их ссылки отличались.  
+Поэтому было сделано решение проверять картинки по их заголовкам.
 Однако возникают случаи, когда первые две картинки имеют одинаковый заголовок,
 что не позволяет корректно проверить 11 пункт [второго теста](#картинки-на-яндексе).
